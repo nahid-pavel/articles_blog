@@ -15,7 +15,7 @@
 
 <h1> Hello , Home Page </h1>
 
-<%= link_to "About", pages_about_path %>
+
 
 <div id = "para">
 
@@ -31,7 +31,7 @@
 
    </div>
 
-
+<%= link_to "About", pages_about_path %>
 
 </body>
 
