@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-before_action :find_article, only: [:edit,:show,:update,:delete]
+before_action :find_article, only: [:edit,:show,:update,:destroy]
        
         def index
 

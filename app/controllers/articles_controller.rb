@@ -28,7 +28,7 @@ before_action :find_article, only: [:edit,:show,:update,:destroy]
 
 	    if @article.save
 
-	      flash[:notice] = "New Article Created"
+	      flash[:success] = "New Article Created"
 
 	      redirect_to article_path(@article)
 	    else
@@ -51,7 +51,7 @@ before_action :find_article, only: [:edit,:show,:update,:destroy]
            
             if @article.update(article_params)
 
-              flash[:notice] = "Article has been edited"
+              flash[:success] = "Article has been edited"
               
               redirect_to article_path(@article)
             else
@@ -64,7 +64,7 @@ before_action :find_article, only: [:edit,:show,:update,:destroy]
        def destroy
 
         @article.destroy
-        flash[:notice] = "Article has been deleted"
+        flash[:danger] = "Article has been deleted"
         redirect_to articles_path
        
 

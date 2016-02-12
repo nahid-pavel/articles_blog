@@ -1,37 +1,59 @@
-<% if @article.errors.any? %>
+<%= render 'shared/errors', obj: @article %>
 
-    <h3> Errors in article </h3>
+<div class ='row'>
 
-    <ul>
+ <div class='col-xs-12'>
+
+    <%= form_for(@article, :html=> { class: "form-horizontal", role: "form"}) do |f| %>
+
+       <div class="form-group">
+
+        	<div class="control-label col-sm-2">
+        	  
+              <%= f.label :title %>
+        	
+        	</div>
+
+          <div class ="col-sm-8">
+
+             <%= f.text_field :title, class: "form-control", placeholder: "Title of Articles", autofocus: true %>
+
+          </div>
+
+       </div>
+
       
-      <% @article.errors.full_messages.each do |err|  %>
-		  
-	 <li> <%= err %> </li>	
 
-       <% end %>
+         <div class="form-group">
 
+             <div class="control-label col-sm-2">
 
-    </ul>
+            	 <%= f.label :description  %>
 
-<% end %>
+             </div>
 
-<%= form_for @article do |f| %>
+             <div class ="col-sm-8">
 
-	<p>
-	 <%= f.label :title %><br />
-	 <%= f.text_field :title %>
-	</p>
-        
-        <p>
-	 <%= f.label :description, "Description" %><br />
-	 <%= f.text_area :description %>
-       </p>
+               <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Write Description" %>
 
-       <p>
-        <%= f.submit  %>
-       </p>
+            </div>
+         </div>
 
+           <div class="form-group">
+
+             <div class="col-sm-offset-2 col-sm-10">
+
+                <%= f.submit  class: 'btn-primary btn-lg' %>
+             </div>
+           </div>
+
+     <% end %>
 
 
+             <div class="col-xs-offset-4 col-xs-4">
 
-<% end %>
+                [ <%= link_to "Cancel request and return to articles listing", articles_path %> ]
+                
+             </div>
+  </div>
+</div>

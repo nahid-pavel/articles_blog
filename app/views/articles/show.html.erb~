@@ -1,8 +1,13 @@
-<h1> Showing Selected Article </h1>
+<h1 align="center"> Showing Selected Article </h1>
+<div class="well col-xs-8 col-xs-offset-2">
+  <h4 class="center"><strong>Description</strong></h4>
+    <hr>
+     Title : <%= @article.title %>
 
-<p>
+
+</div>
   
-  Title : <%= @article.title %>
+ 
 </p>
 
 
@@ -10,3 +15,6 @@
   
   Description : <%= @article.description %>
 </p>
+
+
+<%=link_to "Back to Articles Index", articles_path %>
