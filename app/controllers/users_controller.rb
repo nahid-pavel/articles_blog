@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     
       flash[:success] =  "Welcome #{@user.username} "
 
-      redirect_to root_path
+      redirect_to articles_path
    
     else
 
@@ -26,11 +26,13 @@ class UsersController < ApplicationController
 
  end
 
+ 
+
  private 
 
  def user_params
 
-  params.require(:user).permit(:username,:email)
+  params.require(:user).permit(:username,:email,:password)
   
  end
 
