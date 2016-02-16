@@ -1,11 +1,14 @@
 <h2 align ="center"> Listing All Articles </h2>
+<div class =" center">
+ <%= will_paginate @articles%>
+</div>
 
 <%= render 'articles',obj: @articles %>
 
-<div class="col-xs-offset-4 col-xs-4">
-
-                [ <%= link_to "Cancel request and return to articles listing", articles_path %> ]
-                
+<div align ="center">
+  <%= will_paginate @articles %>
 </div>
+
+
 
 

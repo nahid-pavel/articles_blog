@@ -7,9 +7,13 @@ gem 'rails', '4.1.6'
 
 # Use SCSS for stylesheets
 
+gem 'bcrypt', '~> 3.1', '>= 3.1.10'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
-gem 'bcrypt', '~> 3.1', '>= 3.1.10'
+
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

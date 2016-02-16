@@ -12,6 +12,6 @@
 
 <h4 align="center"> <%= @user.username %>'s Articles </h4>
 
-<%= render 'articles/articles' %>
+<%= render 'articles/articles', obj: @user.articles %>
 
 

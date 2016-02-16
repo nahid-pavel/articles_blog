@@ -1,6 +1,14 @@
 <h2 align ="center"> Listing All Articles </h2>
+<div class =" center">
+ <%= will_paginate @articles, renderer: BootstrapPagination::Rails %>
+</div>
 
 <%= render 'articles',obj: @articles %>
+
+<div align ="center">
+  <%= will_paginate @articles, renderer: BootstrapPagination::Rails %>
+</div>
+
 
 
 
