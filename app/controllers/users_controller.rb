@@ -1,5 +1,11 @@
 class UsersController < ApplicationController
 
+  def index
+
+   @users = User.all
+
+
+  end
 
   def new
    
@@ -15,13 +21,47 @@ class UsersController < ApplicationController
     
       flash[:success] =  "Welcome #{@user.username} "
 
-      redirect_to articles_path
+      redirect_to user_path(@user)
    
     else
 
       render 'new'
     
     end
+
+
+ end
+
+ def show
+    
+    
+    @user = User.find(params[:id])
+
+
+ end
+
+ def edit
+ 
+   @user = User.find(params[:id])
+
+  
+ end
+
+ def update
+
+   @user = User.find(params[:id])
+
+   if @user.update(user_params)
+
+     flash[:success] = "User has been updated"
+
+     redirect_to user_path(@user)
+
+   else
+
+     render 'new'
+
+   end
 
 
  end

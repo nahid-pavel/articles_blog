@@ -1,4 +1,4 @@
-<h1 align="center"> Welcome to Sign Up  Page </h1>
+<h1 align="center"> Welcome to Edit  Page </h1>
 
 <%= render 'shared/errors', obj: @user %>
 
@@ -61,7 +61,7 @@
 
              <div class="col-sm-offset-2 col-sm-10">
 
-                <%= f.submit "Sign Up",  class: 'btn-primary btn-lg' %>
+                <%= f.submit "Edit Changes",  class: 'btn-primary btn-lg' %>
              </div>
            </div>
 

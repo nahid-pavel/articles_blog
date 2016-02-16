@@ -36,6 +36,8 @@ group :development, :test do
 
   gem 'spring' 
 
+  gem 'byebug', '~> 8.2', '>= 8.2.2'
+
 end
 
 # Use ActiveModel has_secure_password
