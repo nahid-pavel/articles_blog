@@ -34,13 +34,7 @@
 </div>
 <% end %>
 
-     <% end %>
+    
 
 
-             <div class="col-xs-offset-4 col-xs-4">
-
-                [ <%= link_to "Cancel request and return to articles listing", articles_path %> ]
-                
-             </div>
-  </div>
-</div>
+            

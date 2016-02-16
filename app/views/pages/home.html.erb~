@@ -13,37 +13,14 @@
 
 <body>
 
-<h1> Hello , Home Page </h1>
+<div class="center jumbotron">
+
+  <h1> Alpha Blog </h1>
+
+   <%= link_to "Sign Up Now", "#", class:"btn btn-danger btn-lg" %>
 
 
-
-<div id = "para">
-
- <table>
-
-  <% articles.each do |article| %>
-    
-     <td>
-
-       <th> Title </th>
-       <th> Description</th>
-
-     </td>
-
-     <td>
-
-       <th><%= article.title %></th>
-       <th><%= article.description %></th>
-
-     </td>
-     
-    <% end %>
-
-  </table>   
-
- </div>
-
-<%= link_to "About", about_path %>
+</div>
 
 </body>
 

@@ -1,6 +1,9 @@
 class ArticlesController < ApplicationController
 
 before_action :find_article, only: [:edit,:show,:update,:destroy]
+before_action :require_user, except:[:index,:show]
+before_action :require_same_user, only:[:edit,:update,:destroy]
+
   
    def index
      @articles = Article.paginate(page: params[:page],per_page: 5)
@@ -17,7 +20,7 @@ before_action :find_article, only: [:edit,:show,:update,:destroy]
    end
    def create
      @article = Article.create(article_params)
-     @article.user = User.last
+     @article.user = current_user
        if @article.save
          flash[:success] = "New Article Created"
          redirect_to article_path(@article)
@@ -56,6 +59,13 @@ before_action :find_article, only: [:edit,:show,:update,:destroy]
        end
 
       private
+        def require_same_user
+
+	  if current_user !=  @article.user
+	    flash[:danger] = "You need are not authorized to change anything"
+	    redirect_to root_path
+	  end
+	end
 
         def article_params
 
